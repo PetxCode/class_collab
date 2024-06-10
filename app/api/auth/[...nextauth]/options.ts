@@ -13,7 +13,7 @@ export const options = {
       async authorize(credentials) {
         await dbConfig();
 
-        const res = await fetch("http://localhost:3000/api/agent/signin", {
+        const res = await fetch(`${URL!}/api/agent/signin`, {
           method: "POST",
           body: JSON.stringify(credentials),
           headers: { "Content-Type": "application/json" },
@@ -30,12 +30,6 @@ export const options = {
     }),
   ],
   secret: "jjkjuiughbjkl;kjkghfdrtyfhv ",
-
-  callbacks: {
-    async() {
-      return "/";
-    },
-  },
 
   pages: {
     signIn: "/auth/register/agent/signin",
