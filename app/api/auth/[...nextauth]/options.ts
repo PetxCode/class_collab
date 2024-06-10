@@ -13,7 +13,7 @@ export const options = {
       async authorize(credentials) {
         await dbConfig();
 
-        const res = await fetch(`${URL!}/api/agent/signin`, {
+        const res = await fetch(`${process.env.URL!}/api/agent/signin`, {
           method: "POST",
           body: JSON.stringify(credentials),
           headers: { "Content-Type": "application/json" },

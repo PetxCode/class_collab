@@ -4,7 +4,7 @@ import { URL } from "./constant";
 
 export const dbConfig = async () => {
   try {
-    await connect(URL!).then(() => {
+    await connect(process.env.MONGO_DB!).then(() => {
       console.clear();
       console.log("db connection established");
     });
