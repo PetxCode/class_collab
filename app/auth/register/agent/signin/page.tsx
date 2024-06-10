@@ -6,10 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 
 const page = () => {
-  const router = useRouter();
   const [toggle, setToggle] = useState<boolean>(false);
 
   const onToggle = () => {
@@ -36,7 +34,6 @@ const page = () => {
     console.log(email, password);
 
     signIn("credentials", { email, password });
-    router.push("/");
   });
 
   return (
